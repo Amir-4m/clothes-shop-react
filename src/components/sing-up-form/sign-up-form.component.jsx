@@ -54,7 +54,7 @@ const SingUpForm = () => {
                 <FormInput label="Email" type='email' required onChange={handleChange} name="email" value={email} />
                 <FormInput label="Password" type='password' required onChange={handleChange} name="password" value={password} />
                 <FormInput label="Confirm Password" type='password' required onChange={handleChange} name="confirmPassword" value={confirmPassword} />
-                <Button buttonType='default' type="submit">Sign Up </Button>
+                <Button type="submit">Sign Up </Button>
             </form>
         </div>
     )
