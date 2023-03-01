@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+import { createAction } from "../utils/reducer/reducer.utils";
 
 
 const CART_ACTION_TYPE = {
@@ -81,7 +82,7 @@ export const CartProvider = ({ children }) => {
 
         const newCartTotal = newCartItem.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price, 0)
 
-        dispatch({type: CART_ACTION_TYPE.SET_CART_ITEMS, payload:{cartCount:newCartCount, cartItems:newCartItem, cartTotal:newCartTotal}})
+        dispatch(createAction(CART_ACTION_TYPE.SET_CART_ITEMS, {cartCount:newCartCount, cartItems:newCartItem, cartTotal:newCartTotal}))
     }
     const addItemToCart = (product) => {
         const newCartItem = addCartItem(cartItems, product)
